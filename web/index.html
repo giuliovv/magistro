@@ -29,7 +29,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>magistro</title>
+  <title>Magistro</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -40,8 +40,10 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <button id="myButton">Click me</button>
   <script>
-    window.addEventListener('load', function(ev) {
+    const button = document.getElementById("myButton");
+    button.addEventListener("click", function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
