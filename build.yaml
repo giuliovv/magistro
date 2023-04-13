@@ -1,0 +1,7 @@
+targets:
+  $default:
+    builders:
+      web:
+        options:
+          # Add a MIME type mapping for .js files
+          supportedMimeTypes: [text/javascript]

@@ -40,15 +40,14 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
-  <a href="./app.html">Click me</a>
-  <!-- <button id="myButton">Click me</button>
   <script>
-    const button = document.getElementById("myButton");
-    button.addEventListener("click", function(ev) {
+    window.addEventListener("load", function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
+        entrypointUrl: "/main.dart.js",
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
+          serviceWorkerUrl: "/flutter_service_worker.js?v=",
         },
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
@@ -57,6 +56,6 @@
         }
       });
     });
-  </script> -->
+  </script>
 </body>
 </html>
