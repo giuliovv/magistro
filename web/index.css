@@ -1,10 +1,10 @@
 body {
     margin: 0;
+    background-color: #f5f5f5;
   }
 
 @media (orientation: portrait) {
     .cover {
-        background-color: #f5f5f5;
         background-image: url('./assets/background_portrait.webp');
         background-size: auto 80%;
         background-repeat: no-repeat;
@@ -12,17 +12,26 @@ body {
         height: 100vh;
         width: 100vw;
     }
+
+    .cute-button {
+        width: 50%;
+        margin-left: 20%;
+    }
 }
 
 @media (orientation: landscape) {
     .cover {
-        background-color: #f5f5f5;
         background-image: url('./assets/background.webp');
         background-size: auto 100%;
         background-repeat: no-repeat;
         background-position: right bottom;
         height: 100vh;
         width: 100vw;
+    }
+
+    .cute-button {
+        width: 30%;
+        margin-left: 30%;
     }
 }
 
@@ -85,11 +94,44 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* transition effect */
-    width: 30%;
-    margin-left: 30%;
     margin-top: 10%;
 }
 
 .cute-button:hover {
     background-color: #d79e88;
+}
+
+
+svg path {
+    fill: #eacc96;
+  }
+  
+  svg rect {
+    fill: #f5f5f5;
+  }
+
+  .wave {
+    --divider-height: 4rem;
+    
+    position: relative;
+    top: calc( var(--divider-height)/2 * -1 );
+  
+    height: var(--divider-height);
+    width: 100%;
+      /* alternatively, could get rid of the rect, and move the svg container further down */
+  
+    float: left; 
+    z-index: 1;
+    
+  /*   outline: 1px solid red; */
+  }
+
+.About {
+    background-color: #eacc96;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
