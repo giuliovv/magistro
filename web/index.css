@@ -431,11 +431,12 @@ svg rect {
 
   .arrow-soon:after {
     content: 'SOON';
-   position: absolute;
-   left: 195px;
-   top: 50px;
-   width: 0;
-   height: 0;
-   clear: both;
-   transform: rotate(-45deg);
+    font-size: small;
+    position: absolute;
+    left: 195px;
+    top: 45px;
+    width: 0;
+    height: 0;
+    clear: both;
+    transform: rotate(-45deg);
 }
