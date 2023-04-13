@@ -314,6 +314,10 @@ svg rect {
     flex-direction: column;
     justify-content: center;
   }
+
+  .card-content h2 {
+    color: #492c38;
+  }
   
   .card-image {
     display: flex;
