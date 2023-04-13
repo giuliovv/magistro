@@ -173,6 +173,13 @@ svg rect {
     margin-top: -10px;
 }
 
+.subjects-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
 .subjects-title {
     font-size: 2rem;
     color: #492c38;
@@ -210,5 +217,11 @@ svg rect {
         display: flex;
         align-items: center;
         height: 80vh;
+    }
+
+    .subjects-text{
+        font-size: small;
+        width: 50%;
+        text-align: center;
     }
    }
