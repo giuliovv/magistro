@@ -12,7 +12,7 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "app.html": "2b456f24f578dfd2fcb552a9b7c01408",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"index.css": "b2547be92f22e2cf3ef7bbdbe15fc9f7",
+"index.css": "ba5de7ef8f50f8b1d2f6a5bfb13a6860",
 ".git/HEAD": "4cf2d64e44205fe628ddd534e1151b58",
 ".git/COMMIT_EDITMSG": "edcb78d078a5067c2d142ae711321b30",
 ".git/hooks/pre-rebase.sample": "56e45f2bcbc8226d2b4200f7c46371bf",
