@@ -5,7 +5,7 @@ body {
 @media (orientation: portrait) {
     .cover {
         background-color: #f5f5f5;
-        background-image: url('./assets/background_portrait.png');
+        background-image: url('./assets/background_portrait.webp');
         background-size: auto 100%;
         background-repeat: no-repeat;
         background-position: right bottom;
