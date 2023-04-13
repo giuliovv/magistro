@@ -6,7 +6,7 @@ body {
     .cover {
         background-color: #f5f5f5;
         background-image: url('./assets/background_portrait.webp');
-        background-size: auto 100%;
+        background-size: auto 80%;
         background-repeat: no-repeat;
         background-position: right bottom;
         height: 100vh;
@@ -41,7 +41,7 @@ body {
   }
   
 .magistro-title {
-    font-size: 24px;
+    font-size: 2em;
     font-weight: bold;
     margin: 0;
 }
@@ -62,11 +62,13 @@ body {
   
 .title {
     margin-left: 10%;
+    font-size: 3em;
     color: #492c38;
 }
 
 .subtitle {
     font-size: 16px;
+    font-size: 1.8em;
     font-weight: normal;
     margin-left: 10%;
   }
