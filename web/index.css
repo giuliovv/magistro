@@ -83,7 +83,7 @@ body {
   }
   
 .cute-button {
-    background-color: #eacc96;
+    background-color: #fcc299;
     border: none;
     border-radius: 20px; /* rounded corners */
     color: white;
@@ -103,7 +103,7 @@ body {
 
 
 svg path {
-    fill: #eacc96;
+    fill: #fcc299;
   }
   
   svg rect {
@@ -127,7 +127,7 @@ svg path {
   }
 
 .About {
-    background-color: #eacc96;
+    background-color: #fcc299;
     height: 100vh;
     width: 100vw;
     display: flex;
