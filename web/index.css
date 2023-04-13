@@ -144,18 +144,7 @@ svg rect {
       }
 
     .wave-mobile {
-        --divider-height: 4rem;
-    
-        position: relative;
-        top: calc( var(--divider-height)/2 * -0.5 );
-    
-        height: var(--divider-height);
-        width: 100vw;
-    
-        float: left; 
-        z-index: 1;
-    
-        margin-bottom: 0;
+        padding: 0;
     }
   }
 
@@ -163,7 +152,7 @@ svg rect {
     --divider-height: 4rem;
 
     position: relative;
-    top: calc( var(--divider-height)/2 * -2 );
+    /* top: calc( var(--divider-height)/2 * -2 ); */
 
     height: var(--divider-height);
     width: 100vw;
@@ -181,8 +170,7 @@ svg rect {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0;
-    /* justify-content: center; */
+    margin-top: -10px;
 }
 
 .subjects-title {
