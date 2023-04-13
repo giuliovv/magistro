@@ -45,8 +45,8 @@
       <div class="title-container">
         <h1 class="title">Learn like a machine.</h1>
         <p class="subtitle">Let our advanced AI be your tutor. Understand your mistakes and advance in learning at a speed you didn't know was possible.</p>
-        <a href="./app.html">
-          <button class="cute-button">Learn</button>
+        <a href="#Subjects">
+          <button class="cute-button" onClick="document.getElementById('middle').scrollIntoView();">Learn</button>
         </a>
       </div>
     </div>
@@ -59,11 +59,39 @@
     </svg>
   </div>
 
-  <div class="Subjects">
+  <div class="Subjects" id="Subjects">
     <div class="subjects-container">
       <h2 class="subjects-title">Topics</h2>
       <p class="subjects-text">We are on a mission to revolutionize the way we learn things. Improve with us.</p>
     </div>
+
+    <div class="grid">
+      <div class="item">
+        <div class="logo-title-description">
+          <img src="assets/math_logo.webp" alt="subject-logo">
+          <h3>Math</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="logo-title-description">
+          <img src="assets/physics_logo.webp" alt="subject-logo">
+          <h3>Physics</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="logo-title-description">
+          <img src="assets/chemistry_logo.webp" alt="subject-logo">
+          <h3>Chemistry</h3>
+        </div>
+      </div>
+
+      <div class="item" style="align-items: center;">
+        <p style="font-size: small; text-align: center;">More coming soon...</p>
+      </div>
+    </div>
+    
   </div>
 
   <div class="wave">
@@ -72,6 +100,13 @@
       <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none;"></path>
     </svg>
   </div>
+
+  <!-- <div class="Team">
+    <div class="team-container">
+      <h2 class="team-title">Team</h2>
+      <p class="team-text">We are on a mission to revolutionize the way we learn things. Improve with us.</p>
+    </div>
+  </div> -->
 
   <!-- <div class="footer">
     <p>© 2020 Magistro</p>

@@ -68,21 +68,21 @@
     <div class="grid">
       <div class="item">
         <div class="logo-title-description">
-          <img src="assets/math_logo.png" alt="subject-logo">
+          <img src="assets/math_logo.webp" alt="math logo">
           <h3>Math</h3>
         </div>
       </div>
 
       <div class="item">
         <div class="logo-title-description">
-          <img src="assets/physics_logo.png" alt="subject-logo">
+          <img src="assets/physics_logo.webp" alt="physics logo">
           <h3>Physics</h3>
         </div>
       </div>
 
       <div class="item">
         <div class="logo-title-description">
-          <img src="assets/chemistry_logo.png" alt="subject-logo">
+          <img src="assets/chemistry_logo.webp" alt="chemistry logo">
           <h3>Chemistry</h3>
         </div>
       </div>
@@ -101,15 +101,46 @@
     </svg>
   </div>
 
-  <!-- <div class="Team">
-    <div class="team-container">
-      <h2 class="team-title">Team</h2>
-      <p class="team-text">We are on a mission to revolutionize the way we learn things. Improve with us.</p>
+  <div class="About">
+    <div class="about-container">
+      <h2 class="about-title">About</h2>
+      <div class="card">
+        <div class="card-image">
+          <div class="image-container">
+            <img src="assets/studente.png" alt="Student studying" class="card-image">
+          </div>
+        </div>
+        <div class="card-content">
+          <h2>What we do</h2>
+          <p>We use generative AI to create perfect set of fun exercises to learn all sort of things.
+            Thanks to AI, we can create exercises that are tailored to your needs and help you learn faster and better.
+            Furthermore, we use AI to analyze your mistakes and help you understand them and improve.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content" id="founders">
+          <div class="card-image" id="pre-founders"></div>
+          <h2>Who we are</h2>
+          <p>We are a group of friends who met during an internship at Amazon Luxembourg. Alessandro,
+            a data scientist with a startup background, is our CEO.
+            Eleonora, a business analyst with experience in Venture capital and Business validation is our CFO.
+            Giulio, a software engineer and founder of an air quality app, is our CTO.</p>
+        </div>
+        <div class="card-image" id="post-founders"></div>
+      </div>
     </div>
-  </div> -->
+  </div>
 
-  <!-- <div class="footer">
-    <p>© 2020 Magistro</p>
-  </div> -->
+  <script>
+    if (window.matchMedia("(orientation: portrait)").matches) {
+      document.getElementById("pre-founders").innerHTML = '<div class="image-container"><img src="assets/people.png" alt="Founders" class="card-image"></div>';
+    } else {
+      document.getElementById("post-founders").innerHTML = '<div class="image-container"><img src="assets/people.png" alt="Founders" class="card-image"></div>';
+    }
+  </script>
+
+  <div class="footer">
+    <p>© 2023 Magistro</p>
+  </div>
 </body>
 </html>
