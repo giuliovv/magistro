@@ -49,9 +49,10 @@ body {
   }
   
 .magistro-title {
-    font-size: large;
+    font-size: 1.5em;
     font-weight: bold;
     margin: 0;
+    margin-left: 10px;
 }
 
 .container {
