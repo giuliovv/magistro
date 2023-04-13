@@ -254,7 +254,6 @@ svg rect {
     }
    }
 
-
    .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -438,7 +437,7 @@ svg rect {
     content: 'SOON';
     font-size: small;
     position: absolute;
-    left: 195px;
+    left: 205px;
     top: 45px;
     width: 0;
     height: 0;
