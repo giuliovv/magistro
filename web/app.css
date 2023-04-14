@@ -30,7 +30,10 @@
   100% { transform: rotate(360deg); }
 }
 
+
+
 html,
 body {
-    background-color: #fcc299
+    /* background-color: #6bced4 */
+    background: linear-gradient(to right, #fcc299, #6bced4);
 }

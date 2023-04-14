@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'math_selection.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,17 +20,17 @@ class MyApp extends StatelessWidget {
         if (params.isNotEmpty) {
           final id = params['subjectId'];
           return MaterialPageRoute(
-            builder: (context) => const MyHomePage(title: 'Special subject'),
+            builder: (context) => const MathSelection(),
           );
         }
         return MaterialPageRoute(
-          builder: (context) => const MyHomePage(title: 'Magistro'),
+          builder: (context) => const MathSelection(),
         );
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Magistro'),
+      home: const MathSelection(),
     );
   }
 }
