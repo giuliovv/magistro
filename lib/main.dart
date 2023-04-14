@@ -12,11 +12,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Magistro',
-      initialRoute: '/app',
-      routes: {
-        '/app': (context) => const MyHomePage(title: 'Magistro'),
-      },
-      onUnknownRoute: (RouteSettings settings) {
+      initialRoute: '/',
+      onGenerateRoute: (settings) {
+        final uri = Uri.parse(settings.name!);
+        final params = uri.queryParameters;
+        if (params.isNotEmpty) {
+          final id = params['subjectId'];
+          return MaterialPageRoute(
+            builder: (context) => const MyHomePage(title: 'Special subject'),
+          );
+        }
         return MaterialPageRoute(
           builder: (context) => const MyHomePage(title: 'Magistro'),
         );

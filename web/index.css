@@ -413,11 +413,11 @@ svg rect {
     content: '';
    position: absolute;
    left: 200px;
-   top: 30px;
+   top: 33px;
    width: 0;
    height: 0;
-   border-left: 20px solid transparent;
-   border-right: 20px solid transparent;
+   border-left: 10px solid transparent;
+   border-right: 10px solid transparent;
    border-top: 20px solid #492c38;
    clear: both;
    transform: rotate(-90deg);

@@ -1,0 +1,36 @@
+.center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 50%;
+    height: 10%;
+  }
+
+.myloader {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  height: 120px;
+  border: 16px solid transparent;
+  border-radius: 50%;
+  border-top: 4px solid #492c38;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+html,
+body {
+    background-color: #fcc299
+}
