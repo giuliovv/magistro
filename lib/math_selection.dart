@@ -43,7 +43,7 @@ class CurvedSeparator extends StatelessWidget {
             Container(
               height: 20,
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color(0xfff5f5f5),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),
@@ -63,9 +63,10 @@ class Headertext extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
+    double cardWidth = width * 0.9 < 400 ? width * 0.9 : 400;
     return SliverToBoxAdapter(
         child: Container(
-      margin: EdgeInsets.symmetric(horizontal: width * 0.1, vertical: 20),
+      margin: EdgeInsets.symmetric(horizontal: (width - cardWidth)/2, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -122,9 +123,9 @@ class ListTileElement extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(width: width * 0.05),
+            SizedBox(width: cardWidth * 0.05),
             Container(
-              width: 0.4 * width,
+              width: 0.4 * cardWidth,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,11 +146,11 @@ class ListTileElement extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: width * 0.05),
+            SizedBox(width: cardWidth * 0.05),
             Container(
               margin: EdgeInsets.symmetric(
                   vertical: (height * 0.2 - height * 0.15) / 2),
-              width: width * 0.4,
+              width: cardWidth * 0.4,
               height: height * 0.15,
               decoration: BoxDecoration(
                 // borderRadius: BorderRadius.circular(100),
@@ -170,7 +171,7 @@ class _MathSelectionState extends State<MathSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xfff5f5f5),
       body: CustomScrollView(
         slivers: <Widget>[
           const CustomAppBar(),
@@ -199,6 +200,7 @@ class _MathSelectionState extends State<MathSelection> {
                   color: Color(0xffB0C4A4),
                   image: AssetImage('assets/math/algebra_logo.png'),
                 ),
+                const SizedBox(height: 10),
               ],
             ),
           ),
