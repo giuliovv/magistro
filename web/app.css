@@ -34,6 +34,6 @@
 
 html,
 body {
-    /* background-color: #6bced4 */
-    background: linear-gradient(to right, #fcc299, #6bced4);
+    background-color: #fcc299
+    /* background: linear-gradient(to right, #fcc299, #6bced4); */
 }
