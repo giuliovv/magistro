@@ -66,7 +66,8 @@ class Headertext extends StatelessWidget {
     double cardWidth = width * 0.9 < 400 ? width * 0.9 : 400;
     return SliverToBoxAdapter(
         child: Container(
-      margin: EdgeInsets.symmetric(horizontal: (width - cardWidth)/2, vertical: 20),
+      margin: EdgeInsets.symmetric(
+          horizontal: (width - cardWidth) / 2, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -81,7 +82,7 @@ class Headertext extends StatelessWidget {
             height: 20,
           ),
           Text(
-            'A curated selection of topics to help you learn math. From basic arithmetic to calculus and linear algebra there is something for everyone.',
+            'A curated selection of topics to help you master math. From basic arithmetic to calculus and linear algebra there is something for everyone.',
             style: TextStyle(
               color: Colors.grey.shade600,
             ),
