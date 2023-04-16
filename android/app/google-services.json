@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "92008976043",
+    "project_id": "magistro-e1535",
+    "storage_bucket": "magistro-e1535.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92008976043:android:c949c8ff5f22cb7e8af1ee",
+        "android_client_info": {
+          "package_name": "com.example.magistro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92008976043-uhm2vmlhnvrjdb7v90q4v3qcpf2u0och.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuD_S_b984tpVu7yBrsJvYX5q0Vhybg5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92008976043-uhm2vmlhnvrjdb7v90q4v3qcpf2u0och.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "92008976043-5ue4ts9l718jmln3i0jsr3re10c6tgtv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.magistro"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

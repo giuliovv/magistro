@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'math_selection.dart';
+import 'math/math_selection.dart';
+import 'math/math_lessons.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
@@ -14,23 +21,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Magistro',
       initialRoute: '/',
-      onGenerateRoute: (settings) {
-        final uri = Uri.parse(settings.name!);
-        final params = uri.queryParameters;
-        if (params.isNotEmpty) {
-          final id = params['subjectId'];
-          return MaterialPageRoute(
-            builder: (context) => const MathSelection(),
-          );
-        }
-        return MaterialPageRoute(
-          builder: (context) => const MathSelection(),
-        );
+      routes: {
+        '/': (context) => GetMathInfo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MathSelection(),
     );
   }
 }
