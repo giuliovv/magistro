@@ -109,7 +109,8 @@ class ListTileElement extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    double cardWidth = width * 0.9 < 400 ? width * 0.9 : 400;
+    bool smallScreen = width * 0.9 < 400;
+    double cardWidth = smallScreen ? width * 0.9 : width * 0.6;
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -135,7 +136,7 @@ class ListTileElement extends StatelessWidget {
             children: [
               SizedBox(width: cardWidth * 0.05),
               Container(
-                width: 0.4 * cardWidth,
+                width: smallScreen ? 0.4 * cardWidth : 0.3 * cardWidth,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,7 +161,7 @@ class ListTileElement extends StatelessWidget {
               Container(
                 margin: EdgeInsets.symmetric(
                     vertical: (height * 0.2 - height * 0.15) / 2),
-                width: cardWidth * 0.4,
+                width: smallScreen ? 0.4 * cardWidth : cardWidth * 0.15,
                 height: height * 0.15,
                 decoration: BoxDecoration(
                   // borderRadius: BorderRadius.circular(100),

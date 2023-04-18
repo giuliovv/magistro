@@ -60,42 +60,122 @@ class MathSelection extends StatefulWidget {
 class _MathSelectionState extends State<MathSelection> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xfff5f5f5),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          const CustomAppBar(),
-          const CurvedSeparator(),
-          const Headertext(
-            title: "Math Topics",
-          ),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              Map<String, dynamic> data = widget.documents[index].data();
-
-              String documentId = widget.documents[index].id;
-              List<String> parts = documentId.split(" (");
-              String title = parts[0];
-              String subtitle = parts[1].replaceAll(")", "");
-
-              return ListTileElement(
-                title: title,
-                subtitle: subtitle,
-                color: Color(int.parse(data['color'], radix: 16)),
-                image: NetworkImage(
-                  data['logo'],
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      // Check if the screen width is greater than 600 (desktop view)
+      bool isDesktop = constraints.maxWidth > 600;
+      if (isDesktop) {
+        // Render the desktop UI
+        return Scaffold(
+          backgroundColor: Color(0xfff5f5f5),
+          body: Row(children: [
+            SizedBox(
+              width: constraints.maxWidth * 0.2,
+              child: RotatedBox(
+                quarterTurns: -1,
+                child: SizedBox(
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight,
+                  child: const Center(
+                    child: Text(
+                      'MATH',
+                      style: TextStyle(
+                        fontSize: 200,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
-                units: data['units']
-                    .values
-                    .map((value) => value as String)
-                    .toList(),
-              );
-            },
-            childCount: widget.documents.length,
-          )),
-        ],
-      ),
-    );
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                child: Container(
+                    child: ListView.builder(
+                  itemBuilder: (BuildContext context, int index) {
+                    Map<String, dynamic> data = widget.documents[index].data();
+
+                    String documentId = widget.documents[index].id;
+                    List<String> parts = documentId.split(" (");
+                    String title = parts[0];
+                    String subtitle = parts[1].replaceAll(")", "");
+
+                    return ListTileElement(
+                      title: title,
+                      subtitle: subtitle,
+                      color: Color(int.parse(data['color'], radix: 16)),
+                      image: NetworkImage(
+                        data['logo'],
+                      ),
+                      units: data['units']
+                          .values
+                          .map((value) => value as String)
+                          .toList(),
+                    );
+                  },
+                  itemCount: widget.documents.length,
+                  shrinkWrap: true,
+                )),
+              ),
+            ),
+          ]),
+        );
+      } else {
+        // Render the mobile UI
+        return Scaffold(
+          backgroundColor: Color(0xfff5f5f5),
+          body: Column(
+            children: [
+              const SizedBox(
+                height: 120.0,
+                child: Center(
+                  child: Text(
+                    'MATH',
+                    style: TextStyle(
+                      fontSize: 100,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              Container(height: 20, color: Color(0xfff5f5f5)),
+              Expanded(
+                child: Center(
+                  child: ListView.builder(
+                    itemBuilder: (BuildContext context, int index) {
+                      Map<String, dynamic> data =
+                          widget.documents[index].data();
+
+                      String documentId = widget.documents[index].id;
+                      List<String> parts = documentId.split(" (");
+                      String title = parts[0];
+                      String subtitle = parts[1].replaceAll(")", "");
+
+                      return ListTileElement(
+                        title: title,
+                        subtitle: subtitle,
+                        color: Color(int.parse(data['color'], radix: 16)),
+                        image: NetworkImage(
+                          data['logo'],
+                        ),
+                        units: data['units']
+                            .values
+                            .map((value) => value as String)
+                            .toList(),
+                      );
+                    },
+                    itemCount: widget.documents.length,
+                    shrinkWrap: true,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+    });
   }
 }
