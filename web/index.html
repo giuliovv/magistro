@@ -1,171 +1,249 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Stealth stuff. We are going to write something more later. It is going to be very cool. Do not be behind.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="magistro">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- SEO stuff -->
-  <meta property="og:title" content="Magistro" />
-  <meta property="og:type" content="app" />
-  <!-- <meta property="og:url" content="https://www.huakatravel.com" /> -->
-  <!-- <meta property="og:description" content="A collaborative trip planner and travel data aggregator." /> -->
-  <!-- <meta property="og:image" content="https://huakatravel.com/logo.png" /> -->
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:locale" content="en-US" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./index.css">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>Magistro</title>
-  <link rel="manifest" href="manifest.json">
-
-</head>
-<body>
-  <div class="cover">
-    <div class="magistro">
-      <h1 class="magistro-title">Magistro</h1>
-    </div>
-    <div class="about-button">
-      <a href="#About" class="about-button-text">About</a>
-    </div>
-    <div class="container">
-      <div class="title-container">
-        <h1 class="title">Learn like a machine.</h1>
-        <p class="subtitle">Let our advanced AI be your tutor. Understand your mistakes and advance in learning at a speed you didn't know was possible.</p>
-        <a href="#Subjects">
-          <button class="cute-button">Learn</button>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="wave-mobile">
-    <svg class="wave-mobile-svg" viewBox="0 70 500 60" preserveAspectRatio="none">
-      <rect class="rect-mobile" x="0" y="0" width="500" height="500" style="stroke: none;" />
-      <path class="path-mobile" d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none;"></path>
-    </svg>
-  </div>
-
-  <div class="Subjects" id="Subjects">
-    <div class="subjects-container">
-      <h2 class="subjects-title">Topics</h2>
-      <p class="subjects-text">We are on a mission to revolutionize the way we learn things. Improve with us.</p>
-    </div>
-
-    <div class="grid">
-      <div class="item">
-        <a href="./app.html">
-          <div class="arrow-button">
-            <div class="logo-title-description">
-              <img src="assets/math_logo.webp" alt="math logo">
-              <h3>Math</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="item">
-        <div class="arrow-soon">
-          <div class="logo-title-description">
-            <img src="assets/physics_logo.webp" alt="physics logo">
-            <h3>Physics</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="arrow-soon">
-          <div class="logo-title-description">
-            <img src="assets/chemistry_logo.webp" alt="chemistry logo">
-            <h3>Chemistry</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="arrow-soon">
-          <div class="logo-title-description">
-            <img src="assets/finance.webp" alt="finance logo">
-            <h3>Finance</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-
-  <div class="wave">
-    <svg viewBox="0 70 500 60" preserveAspectRatio="none">
-      <rect x="0" y="0" width="500" height="500" style="stroke: none;" />
-      <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none;"></path>
-    </svg>
-  </div>
-
-  <div class="About" id="About">
-    <div class="about-container">
-      <h2 class="about-title">About</h2>
-      <div class="card">
-        <div class="card-image">
-          <div class="image-container">
-            <img src="assets/studente.webp" alt="Student studying" class="card-image">
-          </div>
-        </div>
-        <div class="card-content">
-          <h2>What we do</h2>
-          <p>We use generative AI to create perfect set of fun exercises to learn all sort of things.
-            Thanks to AI, we can create exercises that are tailored to your needs and help you learn faster and better.
-            Furthermore, we use AI to analyze your mistakes and help you understand them and improve.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content" id="founders">
-          <div class="card-image" id="pre-founders"></div>
-          <h2>Who we are</h2>
-          <p>We are a group of friends who met during an internship at Amazon Luxembourg. Alessandro,
-            a data scientist with a startup background, is our CEO.
-            Eleonora, a business analyst with experience in Venture capital and Business validation is our CFO.
-            Giulio, a software engineer and founder of an air quality app, is our CTO.</p>
-        </div>
-        <div class="card-image" id="post-founders"></div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    if (window.matchMedia("(orientation: portrait)").matches) {
-      document.getElementById("pre-founders").innerHTML = '<div class="image-container"><img src="assets/people.webp" alt="Founders" class="card-image"></div>';
-    } else {
-      document.getElementById("post-founders").innerHTML = '<div class="image-container"><img src="assets/people.webp" alt="Founders" class="card-image"></div>';
+  <title>AI-Powered Learning Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
     }
-  </script>
 
-  <div class="footer">
-    <p>© 2023 Magistro</p>
-  </div>
+    body {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0EA3D5;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #FFF;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #FFF;
+      font-weight: bold;
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+    }
+
+    header a.start {
+      background-color: #F27A02;
+      border-radius: 25px;
+    }
+
+    main {
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #1CCAFF;
+    }
+
+    .bold-heading {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .intro-paragraph {
+      text-align: center;
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+
+    .btn-start {
+      background-color: #F27A02;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    .features {
+      background-color: #FFF;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 80%;
+    }
+
+    .feature {
+      flex: 0 0 calc(50% - 1rem);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .feature-block {
+      background-color: #FFF;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .feature {
+        flex: 0 0 100%;
+        margin-right: 0;
+      }
+    }
+
+    .subjects {
+      background-color: #1CCAFF;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .subject-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 80%;
+    }
+
+    .subject {
+      flex: 0 0 calc(50% - 1rem);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .subject-block {
+      background-color: #FFF;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .subject h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .subject {
+        flex: 0 0 100%;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Magistro</h1>
+    <nav>
+      <a href="#subjects" class="nav-item btn-start">Start</a>
+      <a href="#start" class="nav-item">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="bold-heading">Shaping the future of education</h2>
+    <p class="intro-paragraph">Transform Your Learning Experience with Our AI-Powered Teacher!</p>
+  </main>
+
+  <section id="start" class="features">
+    <h2 class="section-heading">With our AI-powered lessons you can...</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-block">
+          <h3>Feature 1</h3>
+          <p>Description of feature 1...</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-block">
+          <h3>Feature 2</h3>
+          <p>Description of feature 2...</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-block">
+          <h3>Feature 3</h3>
+          <p>Description of feature 3...</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-block">
+          <h3>Feature 4</h3>
+          <p>Description of feature 4...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects" class="subjects">
+    <h2 class="section-heading">What do you want to learn?</h2>
+    <div class="subject-grid">
+      <div class="subject">
+        <div class="subject-block">
+          <h3>Math</h3>
+        </div>
+      </div>
+      <div class="subject">
+        <div class="subject-block">
+          <h3>Biology</h3>
+        </div>
+      </div>
+      <div class="subject">
+        <div class="subject-block">
+          <h3>Philosophy</h3>
+        </div>
+      </div>
+      <div class="subject">
+        <div class="subject-block">
+          <h3>History</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
+
 </html>
