@@ -16,8 +16,9 @@ class _GetMathInfoState extends State<GetMathInfo> {
   void initState() {
     super.initState();
     topics = FirebaseFirestore.instance
-        .collection("Argomenti")
-        .where("subject", isEqualTo: "Matematica")
+        .collection("subjects")
+        .doc("matematica")
+        .collection("areas")
         .get();
   }
 
@@ -39,6 +40,10 @@ class _GetMathInfoState extends State<GetMathInfo> {
         if (snapshot.connectionState == ConnectionState.done) {
           List<QueryDocumentSnapshot<Map<String, dynamic>>> documents =
               snapshot.data!.docs;
+
+          documents
+              .sort((a, b) => a.data()['index'].compareTo(b.data()['index']));
+
           return MathSelection(documents: documents);
         }
 
@@ -105,14 +110,12 @@ class _MathSelectionState extends State<MathSelection> {
                     return ListTileElement(
                       title: title,
                       subtitle: subtitle,
-                      color: Color(int.parse(data['color'], radix: 16)),
-                      image: NetworkImage(
-                        data['logo'],
+                      color: Colors
+                          .red, // Color(int.parse(data['color'], radix: 16)),
+                      image: const NetworkImage(
+                        "https://raw.githubusercontent.com/giuliovv/magistro_app/master/assets/assets/math/algebra_logo.png",
                       ),
-                      units: data['units']
-                          .values
-                          .map((value) => value as String)
-                          .toList(),
+                      area: documentId,
                     );
                   },
                   itemCount: widget.documents.length,
@@ -161,10 +164,7 @@ class _MathSelectionState extends State<MathSelection> {
                         image: NetworkImage(
                           data['logo'],
                         ),
-                        units: data['units']
-                            .values
-                            .map((value) => value as String)
-                            .toList(),
+                        area: documentId,
                       );
                     },
                     itemCount: widget.documents.length,

@@ -96,14 +96,14 @@ class ListTileElement extends StatelessWidget {
       required this.subtitle,
       required this.color,
       required this.image,
-      required this.units})
+      required this.area})
       : super(key: key);
 
   final String title;
   final String subtitle;
   final NetworkImage image;
   final Color color;
-  final List<dynamic> units;
+  final String area;
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +117,7 @@ class ListTileElement extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) =>
-                MathLesson(title: title, subtitle: subtitle, units: units),
+                GetLessonsInfo(title: title, subtitle: subtitle, area: area),
           ),
         );
       },
@@ -175,6 +175,53 @@ class ListTileElement extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class RightExpansionPanel extends StatefulWidget {
+  final String header;
+  final Widget body;
+
+  const RightExpansionPanel(
+      {Key? key, required this.header, required this.body})
+      : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _RightExpansionPanelState();
+}
+
+class _RightExpansionPanelState extends State<RightExpansionPanel> {
+  bool _isExpanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Positioned(
+          right: 0,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            width: _isExpanded ? MediaQuery.of(context).size.width / 2 : 0,
+            child: widget.body,
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            setState(() {
+              _isExpanded = !_isExpanded;
+            });
+          },
+          child: Container(
+            width: MediaQuery.of(context).size.width / 2,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Text(
+              widget.header,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
