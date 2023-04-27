@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 
 import 'components/math_components.dart';
 
@@ -52,10 +53,9 @@ class _GetLessonsInfoState extends State<GetLessonsInfo> {
           List<QueryDocumentSnapshot<Map<String, dynamic>>> documents =
               snapshot.data!.docs;
           return MathLesson(
-            title: widget.title,
-            subtitle: widget.subtitle,
-            units: documents.map((e) => e.id).toList(),
-          );
+              title: widget.title,
+              subtitle: widget.subtitle,
+              documents: documents);
         }
 
         return const Text("loading");
@@ -69,49 +69,97 @@ class MathLesson extends StatefulWidget {
       {Key? key,
       required this.title,
       required this.subtitle,
-      required this.units})
+      required this.documents})
       : super(key: key);
 
   final String title;
   final String subtitle;
-  final List<dynamic> units;
+  final List<QueryDocumentSnapshot<Map<String, dynamic>>> documents;
 
   @override
   State<MathLesson> createState() => _MathLessonState();
 }
 
 class _MathLessonState extends State<MathLesson> {
+  List<Item> _data = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _data = List.castFrom(widget.documents)
+        .map((e) => Item(
+            headerValue: e.id,
+            expandedValue: e
+                .data()["units"]
+                .map((key, value) => MapEntry(key, value.toString()))
+                .cast<String, String>()))
+        .toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xfff5f5f5),
       body: CustomScrollView(
         slivers: <Widget>[
-          const CustomAppBar(),
-          const CurvedSeparator(),
           Headertext(
-            title: "${widget.title} lessons",
+            title: "Lezioni di ${widget.title}",
           ),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              String title = "Lesson ${index + 1}";
-              String subtitle = widget.units[index];
-
-              return ListTileElement(
-                title: title,
-                subtitle: subtitle,
-                color: Color.fromARGB(255, 230, 95, 95),
-                image: NetworkImage(
-                  'https://raw.githubusercontent.com/giuliovv/magistro/master/assets/math/statistics_logo.png',
-                ),
-                area: "",
-              );
-            },
-            childCount: widget.units.length,
-          )),
+          SliverFillRemaining(
+            child: ListView.builder(
+              itemCount: _data.length,
+              itemBuilder: (context, index) {
+                final item = _data[index];
+                return ExpansionPanelList(
+                  expansionCallback: (int index, bool isExpanded) {
+                    setState(() {
+                      item.isExpanded = !isExpanded;
+                    });
+                  },
+                  children: [
+                    ExpansionPanel(
+                      headerBuilder: (BuildContext context, bool isExpanded) {
+                        return ListTile(
+                          title: Text(item.headerValue),
+                        );
+                      },
+                      body: Column(
+                        children: item.expandedValue.entries
+                            .map(
+                              (entry) => ListTile(
+                                title: Text("Esercizio ${entry.key}"),
+                                subtitle: Text(entry.value),
+                                trailing: const Icon(Icons.delete),
+                                onTap: () {
+                                  setState(() {
+                                    _data.removeAt(index);
+                                  });
+                                },
+                              ),
+                            )
+                            .toList(),
+                      ),
+                      isExpanded: item.isExpanded,
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
   }
+}
+
+class Item {
+  Item({
+    required this.expandedValue,
+    required this.headerValue,
+    this.isExpanded = false,
+  });
+
+  Map<String, String> expandedValue;
+  String headerValue;
+  bool isExpanded;
 }
